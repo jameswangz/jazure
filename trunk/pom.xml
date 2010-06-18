@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	<parent>
+    	<groupId>org.sonatype.oss</groupId>
+    	<artifactId>oss-parent</artifactId>
+    	<version>2</version>
+  	</parent>
 	<groupId>com.googlecode.jazure</groupId>
 	<artifactId>jazure-parent</artifactId>
 	<version>1.0-SNAPSHOT</version>
@@ -27,7 +32,7 @@
 	<scm>
 		<connection>scm:svn:http://jazure.googlecode.com/svn/trunk</connection>
 		<developerConnection>scm:svn:https://jazure.googlecode.com/svn/trunk</developerConnection>
-		<url>http://jazure.googlecode.com/svn</url>
+		<url>http://jazure.googlecode.com/svn/trunk</url>
 	</scm>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -90,22 +95,6 @@
 					<downloadSources>true</downloadSources>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-release-plugin</artifactId>
-				<version>2.0-beta-7</version>
-				<configuration>
-					<tagBase>svn://10.200.107.71/jazure/tags/</tagBase>
-					<mavenExecutorId>forked-path</mavenExecutorId>
-				</configuration>
-			</plugin>
 		</plugins>
-		<extensions>
-			<extension>
-				<groupId>org.apache.maven.wagon</groupId>
-				<artifactId>wagon-ssh</artifactId>
-				<version>1.0-beta-6</version>
-			</extension>
-		</extensions>
 	</build>
 </project>
