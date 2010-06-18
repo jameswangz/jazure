@@ -1,9 +1,9 @@
-package com.derbysoft.jazure.sdk.connector.mina.roomrate;
+package com.googlecode.jazure.sdk.connector.mina.roomrate;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import com.derbysoft.jazure.sdk.task.Result;
+import javax.xml.transform.Result;
 
 public class AvailabilityResult implements Result {
 

@@ -1,11 +1,5 @@
-package com.derbysoft.jazure.sdk.connector.mina.roomrate;
+package com.googlecode.jazure.sdk.connector.mina.roomrate;
 
-import com.derbysoft.jazure.sdk.concurrent.ConcurrentPolicy;
-import com.derbysoft.jazure.sdk.concurrent.FixedConcurrentPolicy;
-import com.derbysoft.jazure.sdk.schedule.FixedSchedulePolicy;
-import com.derbysoft.jazure.sdk.schedule.SchedulePolicy;
-import com.derbysoft.jazure.sdk.task.AbstractTask;
-import com.derbysoft.jazure.sdk.task.Result;
 
 public class RoomRateTask extends AbstractTask {
 
