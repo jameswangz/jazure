@@ -1,4 +1,4 @@
-package com.derbysoft.jazure.sdk.connector.mina.roomrate;
+package com.googlecode.jazure.sdk.connector.mina.roomrate;
 
 
 public interface RoomRateService {
