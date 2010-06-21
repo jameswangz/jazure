@@ -8,7 +8,7 @@
   	</parent>
 	<groupId>com.googlecode.jazure</groupId>
 	<artifactId>jazure-parent</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	<version>1.0</version>
 	<packaging>pom</packaging>
 	<name>jazure-parent</name>
 	<description>Java implementation of Microsoft Azure Cloud Platform</description>
@@ -30,9 +30,9 @@
 		</developer>
 	</developers>
 	<scm>
-		<connection>scm:svn:http://jazure.googlecode.com/svn/trunk</connection>
-		<developerConnection>scm:svn:https://jazure.googlecode.com/svn/trunk</developerConnection>
-		<url>http://jazure.googlecode.com/svn/trunk</url>
+		<connection>scm:svn:http://jazure.googlecode.com/svn/tags/jazure-parent-1.0</connection>
+		<developerConnection>scm:svn:https://jazure.googlecode.com/svn/tags/jazure-parent-1.0</developerConnection>
+		<url>http://jazure.googlecode.com/svn/tags/jazure-parent-1.0</url>
 	</scm>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
