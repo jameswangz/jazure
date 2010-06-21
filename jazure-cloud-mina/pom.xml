@@ -3,7 +3,7 @@
 	<parent>
 		<artifactId>jazure-parent</artifactId>
 		<groupId>com.googlecode.jazure</groupId>
-		<version>1.0-SNAPSHOT</version>
+		<version>1.0</version>
 	</parent>
 	<artifactId>jazure-cloud-mina</artifactId>
 	<name>jazure-cloud-mina</name>
