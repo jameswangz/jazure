@@ -3,7 +3,7 @@
 	<parent>
 		<artifactId>jazure-parent</artifactId>
 		<groupId>com.googlecode.jazure</groupId>
-		<version>1.0</version>
+		<version>1.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>jazure-sdk-quartz</artifactId>
 	<name>jazure-sdk-quartz</name>
