@@ -19,8 +19,8 @@ public abstract class LifeCycles {
 				if (running) {
 					throw new IllegalStateException("Already running!");
 				}
-				running = true;
 				startCommand.run();
+				running = true;
 			}
 
 			@Override
@@ -28,8 +28,8 @@ public abstract class LifeCycles {
 				if (!running) {
 					throw new IllegalStateException("Already stopped!");
 				}
-				running = false;
 				stopCommand.run();
+				running = false;
 			}
 		};
 	}
