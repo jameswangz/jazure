@@ -12,4 +12,21 @@ public abstract class JobConfigs {
 		};
 	}
 	
+	@SuppressWarnings("serial")
+	public static Function<String, JobConfig> newFromIdFunction() {
+		return new Function<String, JobConfig>() {
+			public JobConfig apply(final String from) {
+				return new JobConfig() {
+					public String getId() {
+						return from;
+					}
+				};
+			}
+		};
+	}
+	
+	public static JobConfig newFromId(String id) {
+		return newFromIdFunction().apply(id);
+	}
+	
 }
