@@ -13,7 +13,6 @@ import com.googlecode.jazure.sdk.job.exception.JobNotRunningException;
 import com.googlecode.jazure.sdk.job.polling.PollingJobBuilder;
 import com.googlecode.jazure.sdk.job.polling.PollingJobConfig;
 import com.googlecode.jazure.sdk.lifecycle.LifeCycle;
-import com.googlecode.jazure.sdk.task.Status;
 import com.googlecode.jazure.sdk.task.TaskInvocation;
 import com.googlecode.jazure.sdk.task.storage.TaskStorage;
 import com.googlecode.jazure.sdk.task.tracker.TaskTracker;
@@ -53,25 +52,23 @@ public interface Console extends LifeCycle {
 	TaskTracker getTaskTracker();
 	
 	/**
-	 * Determine whether a task can be re-executed, this depends on the following conditions:
+	 * Determine whether a task can be executed, this depends on the following conditions:
 	 * <ul>
 	 * <li>Job that task belongs to must exists.</li>
 	 * <li>Job that task belongs to must running.</li>
-	 * <li>Status of task must be completed.</li>
 	 * </ul>
 	 * @param invocation the invocation
 	 * @return whether task is re-executable
-	 * @see Status#isCompleted()
 	 */
-	boolean reExecutable(TaskInvocation invocation);
+	boolean executable(TaskInvocation invocation);
 	
 	/**
-	 * Convenient method to execute a task separately, a task can be re-executed only when {@link #reExecutable(TaskInvocation)} returns true.
+	 * Convenient method to execute a task separately, a task can be re-executed only when {@link #executable(TaskInvocation)} returns true.
 	 * @param invocation the invocation
 	 * @return console
 	 * @throws JobNotFoundException if can't get job this task belongs to
 	 * @throws JobNotRunningException if the job this bask belongs to is not running
-	 * @see #reExecutable(TaskInvocation)
+	 * @see #executable(TaskInvocation)
 	 * @see Job#executeTask(TaskInvocation)
 	 */
 	Console executeTask(TaskInvocation invocation) throws JobNotFoundException, JobNotRunningException;

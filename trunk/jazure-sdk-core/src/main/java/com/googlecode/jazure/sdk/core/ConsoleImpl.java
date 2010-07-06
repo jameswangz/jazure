@@ -302,10 +302,7 @@ class ConsoleImpl implements Console {
 	}
 	
 	@Override
-	public boolean reExecutable(TaskInvocation invocation) {
-		if (!invocation.isCompleted()) {
-			return false;
-		}
+	public boolean executable(TaskInvocation invocation) {
 		try {
 			return getJob(invocation.getMetaData().getJobConfig()).isRunning();
 		} catch (JobNotFoundException e) {
