@@ -18,6 +18,11 @@ import com.googlecode.jazure.sdk.task.TaskInvocation;
 import com.googlecode.jazure.sdk.task.storage.TaskStorage;
 import com.googlecode.jazure.sdk.task.tracker.TaskTracker;
 
+/**
+ * Facade interface of JAzure enterprise side to allow client configure and control everything.
+ * @author James Wang
+ *
+ */
 public interface Console extends LifeCycle {
 
 	Console configProject(ProjectConfiguration projectConfiguration);
@@ -39,8 +44,8 @@ public interface Console extends LifeCycle {
 	List<Job<?>> getJobs();
 	
 	/**
-	 * Rebuild all jobs by job configurations, if you add or remove job configurations after console started,
-	 * you must run rebuild to synchronize jobs with configurations.
+	 * Rebuild all jobs by job configurations, a rebuild operation is expected after adding or removing job configurations
+	 * to synchronize jobs with configurations.
 	 * @return console
 	 */
 	Console rebuildJobs();
@@ -48,14 +53,26 @@ public interface Console extends LifeCycle {
 	TaskTracker getTaskTracker();
 	
 	/**
-	 * Convenient method to execute a task separately, a task can be re-executed after success or failed.
+	 * Determine whether a task can be re-executed, this depends on the following conditions:
+	 * <ul>
+	 * <li>Job that task belongs to must exists.</li>
+	 * <li>Job that task belongs to must running.</li>
+	 * <li>Status of task must be completed.</li>
+	 * </ul>
+	 * @param invocation the invocation
+	 * @return whether task is re-executable
+	 * @see Status#isCompleted()
+	 */
+	boolean reExecutable(TaskInvocation invocation);
+	
+	/**
+	 * Convenient method to execute a task separately, a task can be re-executed only when {@link #reExecutable(TaskInvocation)} returns true.
 	 * @param invocation the invocation
 	 * @return console
-	 * @throws JobNotFoundException if can't get job this task belong to
-	 * @throws JobNotRunningException if the job this bask belong to is not running
+	 * @throws JobNotFoundException if can't get job this task belongs to
+	 * @throws JobNotRunningException if the job this bask belongs to is not running
+	 * @see #reExecutable(TaskInvocation)
 	 * @see Job#executeTask(TaskInvocation)
-	 * @see #getJob(JobConfig)
-	 * @see Status
 	 */
 	Console executeTask(TaskInvocation invocation) throws JobNotFoundException, JobNotRunningException;
 
