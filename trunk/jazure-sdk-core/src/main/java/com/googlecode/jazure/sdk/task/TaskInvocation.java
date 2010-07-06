@@ -152,7 +152,7 @@ public class TaskInvocation implements Serializable {
 	}
 
 	public boolean isCompleted() {
-		return status == Status.SUCCESSFUL || status == Status.FAILED;
+		return status.isCompleted();
 	}
 
 	public TaskInvocation executing() {
