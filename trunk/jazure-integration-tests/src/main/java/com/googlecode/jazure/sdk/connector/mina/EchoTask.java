@@ -42,7 +42,7 @@ public class EchoTask extends AbstractTask {
 		private static final long serialVersionUID = -6008161370445519735L;
 
 		@Override
-		public boolean successed() {
+		public boolean successful() {
 			return true;
 		}
 

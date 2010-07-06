@@ -108,11 +108,11 @@ public class Mysql5TaskStorageIntegrationTest {
 		TaskInvocation invocation = storage.load(id);
 		logger.debug("Before update : " + invocation);
 		Result result = new HiltonResult("test passport", new RoomRate("foo room type", new BigDecimal(100), new DateSpan("2009-06-01", "2009-06-03")));
-		storage.update(invocation.successed().setResult(result));
+		storage.update(invocation.successful().setResult(result));
 		invocation = storage.load(id);
 		logger.debug("After update : " + invocation);
 		//simulate re-execute
-		storage.update(invocation.successed().setResult(result));
+		storage.update(invocation.successful().setResult(result));
 	}
 	
 	@Test

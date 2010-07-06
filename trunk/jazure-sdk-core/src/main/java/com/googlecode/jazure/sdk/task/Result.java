@@ -4,6 +4,6 @@ import java.io.Serializable;
 
 public interface Result extends Serializable, Searchable {
 
-	boolean successed();
+	boolean successful();
 
 }
