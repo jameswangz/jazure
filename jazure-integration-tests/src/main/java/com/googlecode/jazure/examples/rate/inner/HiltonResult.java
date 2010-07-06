@@ -20,7 +20,7 @@ public class HiltonResult implements Result {
 	}
 
 	@Override
-	public boolean successed() {
+	public boolean successful() {
 		return true;
 	}
 

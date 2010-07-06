@@ -141,8 +141,8 @@ public class TaskInvocation implements Serializable {
 	}
 
 	
-	public TaskInvocation successed() {
-		this.status = Status.SUCCESSED;
+	public TaskInvocation successful() {
+		this.status = Status.SUCCESSFUL;
 		return this.timeUpdated();
 	}
 
@@ -152,7 +152,7 @@ public class TaskInvocation implements Serializable {
 	}
 
 	public boolean isCompleted() {
-		return status == Status.SUCCESSED || status == Status.FAILED;
+		return status == Status.SUCCESSFUL || status == Status.FAILED;
 	}
 
 	public TaskInvocation executing() {
@@ -161,8 +161,8 @@ public class TaskInvocation implements Serializable {
 	}
 
 	public TaskInvocation completed() {
-		if (result.successed()) {
-			return successed();
+		if (result.successful()) {
+			return successful();
 		} 
 		return failed();
 	}

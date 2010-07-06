@@ -20,7 +20,7 @@ public class FailedResult implements Result {
 	}
 	
 	@Override
-	public boolean successed() {
+	public boolean successful() {
 		return false;
 	}
 

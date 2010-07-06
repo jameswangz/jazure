@@ -68,7 +68,7 @@ public class IhgLoader extends AbstractPollingLoader<IhgJobConfig> {
 		}
 
 		@Override
-		public boolean successed() {
+		public boolean successful() {
 			return true;
 		}
 

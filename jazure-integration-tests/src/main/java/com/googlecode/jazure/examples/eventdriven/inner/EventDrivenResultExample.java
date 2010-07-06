@@ -16,7 +16,7 @@ public class EventDrivenResultExample implements Result {
 	}
 
 	@Override
-	public boolean successed() {
+	public boolean successful() {
 		return true;
 	}
 
