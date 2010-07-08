@@ -9,7 +9,7 @@ import com.googlecode.jazure.sdk.loader.Loader;
 
 public abstract class AbstractJobBuilder<T extends JobConfig> implements JobBuilder<T> {
 
-	protected Aggregator<T> aggregator;
+	protected Aggregator<? super T> aggregator;
 	protected Injector injector;
 	protected CorrelationStrategy correlationStrategy;
 	protected CompletionStrategy completionStrategy;
@@ -19,7 +19,7 @@ public abstract class AbstractJobBuilder<T extends JobConfig> implements JobBuil
 	protected abstract Job<T> buildInternel();
 	
 	@Override
-	public JobBuilder<T> aggregateWith(Aggregator<T> aggregator) {
+	public JobBuilder<T> aggregateWith(Aggregator<? super T> aggregator) {
 		this.aggregator = aggregator;
 		return this;
 	}

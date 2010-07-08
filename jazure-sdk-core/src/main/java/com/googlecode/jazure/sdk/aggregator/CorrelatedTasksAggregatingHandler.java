@@ -17,7 +17,7 @@ public class CorrelatedTasksAggregatingHandler<T extends JobConfig> {
 
 	private static Logger logger = LoggerFactory.getLogger(CorrelatedTasksAggregatingHandler.class);
 	
-	private final Aggregator<T> aggregator;
+	private final Aggregator<? super T> aggregator;
 	private final CorrelationStrategy correlationStrategy;
 	private final CompletionStrategy completionStrategy;
 	
@@ -25,7 +25,7 @@ public class CorrelatedTasksAggregatingHandler<T extends JobConfig> {
 	private ConcurrentMap<Object, TaskInvocationBarrier> barriers = new ConcurrentHashMap<Object, TaskInvocationBarrier>();
 
 	public CorrelatedTasksAggregatingHandler(
-		Aggregator<T> aggregator, 
+		Aggregator<? super T> aggregator, 
 		CorrelationStrategy correlationStrategy, 
 		CompletionStrategy completionStrategy) {
 		
