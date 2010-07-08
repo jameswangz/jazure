@@ -9,7 +9,7 @@ public interface Job<T extends JobConfig> extends LifeCycle {
 	
 	T getJobConfig();
 		
-	Aggregator<T> getAggregator();
+	Aggregator<? super T> getAggregator();
 
 	Job<T> executeTask(TaskInvocation invocation) throws JobNotRunningException;
 

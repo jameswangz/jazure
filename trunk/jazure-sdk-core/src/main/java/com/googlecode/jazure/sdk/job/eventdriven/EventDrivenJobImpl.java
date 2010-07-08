@@ -19,7 +19,7 @@ class EventDrivenJobImpl<T extends JobConfig> extends AbstractJob<T> implements 
 	public EventDrivenJobImpl(
 		T jobConfig, 
 		EventDrivenLoader<T> eventDrivenLoader, 
-		Aggregator<T> aggregator,
+		Aggregator<? super T> aggregator,
 		CorrelationStrategy correlationStrategy,
 		CompletionStrategy completionStrategy, 
 		String taskQueue, 

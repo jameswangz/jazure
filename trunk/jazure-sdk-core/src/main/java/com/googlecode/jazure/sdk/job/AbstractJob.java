@@ -33,7 +33,7 @@ public abstract class AbstractJob<T extends JobConfig> implements Job<T> {
 
 	protected Logger logger = LoggerFactory.getLogger(getClass());
 	
-	protected final Aggregator<T> aggregator;
+	protected final Aggregator<? super T> aggregator;
 	protected final String taskQueue;
 	protected final String resultQueue;
 	
@@ -56,7 +56,7 @@ public abstract class AbstractJob<T extends JobConfig> implements Job<T> {
 	protected CorrelatedTasksAggregatingHandler<T> correlatedTasksAggregatingHandler;
 
 	public AbstractJob(
-		Aggregator<T> aggregator,
+		Aggregator<? super T> aggregator,
 		CorrelationStrategy correlationStrategy,
 		CompletionStrategy completionStrategy, 
 		String taskQueue,
@@ -188,7 +188,7 @@ public abstract class AbstractJob<T extends JobConfig> implements Job<T> {
 	}
 
 	@Override
-	public Aggregator<T> getAggregator() {
+	public Aggregator<? super T> getAggregator() {
 		return aggregator;
 	}
 	

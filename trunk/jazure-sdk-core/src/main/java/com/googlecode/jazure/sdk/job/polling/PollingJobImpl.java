@@ -20,7 +20,7 @@ class PollingJobImpl<T extends PollingJobConfig> extends AbstractJob<T> implemen
 	public PollingJobImpl(
 		T jobConfig, 
 		PollingLoader<T> pollingLoader,
-		Aggregator<T> aggregator, 
+		Aggregator<? super T> aggregator, 
 		CorrelationStrategy correlationStrategy,
 		CompletionStrategy completionStrategy, 
 		String taskQueue, 

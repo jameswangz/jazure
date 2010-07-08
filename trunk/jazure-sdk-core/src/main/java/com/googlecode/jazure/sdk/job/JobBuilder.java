@@ -6,7 +6,7 @@ import com.googlecode.jazure.sdk.aggregator.CorrelationStrategy;
 
 public interface JobBuilder<T extends JobConfig> {
 
-	JobBuilder<T> aggregateWith(Aggregator<T> aggregator);
+	JobBuilder<T> aggregateWith(Aggregator<? super T> aggregator);
 	
 	JobBuilder<T> correlationStrategy(CorrelationStrategy correlationStrategy);
 	
