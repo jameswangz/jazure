@@ -7,7 +7,7 @@ public abstract class LifeCycles {
 	public static LifeCycleWrapper wrapped() {
 		return new LifeCycleWrapper() {
 		
-			private boolean running;
+			private volatile boolean running;
 
 			@Override
 			public boolean isRunning() {
